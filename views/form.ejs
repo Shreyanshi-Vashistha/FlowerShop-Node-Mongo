@@ -1,0 +1,110 @@
+<%- include('./shared/header.ejs') %>
+
+<!-- form section -->
+<div class="container">
+  <form
+    id="contact"
+    name="myform"
+    method="Post"
+    onsubmit="return formSubmit();"
+    action="/submitform"
+  >
+    <h3>Make a Purchase</h3>
+
+    <fieldset>
+      <input
+        name="name"
+        placeholder="Enter your name"
+        type="text"
+        tabindex="1"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        name="address"
+        placeholder="Enter your Address"
+        type="text"
+        tabindex="1"
+      />
+    </fieldset>
+    <fieldset>
+      <select id="province" name="province" tabindex="3">
+        <option value="" selected="selected">Please select Province</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <select id="city" name="city" tabindex="3">
+        <option value="" selected="selected">Please select City</option>
+      </select>
+      <input id="gst" name="gst" type="number" tabindex="3" hidden />
+      <input id="proVal" name="proVal" type="text" tabindex="3" hidden />
+    </fieldset>
+    <fieldset>
+      <input
+        id="phone"
+        name="phone"
+        placeholder="Enter Your Phone Number (5198201234)"
+        type="text"
+        tabindex="3"
+      />
+    </fieldset>
+    <fieldset>
+      <input
+        id="email"
+        name="email"
+        placeholder="Enter Your Email Address"
+        type="text"
+        tabindex="2"
+      />
+    </fieldset>
+    <fieldset>
+      <label>Jasmines ($5)</label>
+      <input
+        id="prod1"
+        name="prod1"
+        placeholder="Enter quantity"
+        type="text"
+        tabindex="2"
+      />
+    </fieldset>
+    <fieldset>
+      <label>Roses ($10)</label>
+      <input
+        id="prod2"
+        name="prod2"
+        placeholder="Enter quantity"
+        type="text"
+        tabindex="2"
+      />
+    </fieldset>
+    <fieldset>
+      <label>Orchids ($15)</label>
+      <input
+        id="prod3"
+        name="prod3"
+        placeholder="Enter quantity"
+        type="text"
+        tabindex="2"
+      />
+    </fieldset>
+    <fieldset>
+      <button
+        name="submit"
+        type="submit"
+        id="contact-submit"
+        data-submit="...Sending"
+      >
+        Submit
+      </button>
+    </fieldset>
+  </form>
+
+  <!-- section to display errors -->
+  <p class="formErrors">
+    <% if(typeof(errors) != 'undefined'){ for(error of errors){ %> <%= error.msg
+    %><br />
+    <% } } %>
+  </p>
+</div>
+
+<%- include('./shared/footer.ejs') %>

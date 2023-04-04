@@ -1,0 +1,42 @@
+<%- include('./shared/header.ejs') %>
+
+<h2>Customer Details</h2>
+<br />
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Province</th>
+    <th>City</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Tax</th>
+    <th>Jasmines</th>
+    <th>Roses</th>
+    <th>Orchids</th>
+    <th>Subtotal</th>
+    <th>Tax%</th>
+    <th>Total</th>
+  </tr>
+
+  <% data.forEach(item => { %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.address %></td>
+    <td><%= item.province %></td>
+    <td><%= item.city %></td>
+    <td><%= item.email %></td>
+    <td><%= item.phone %></td>
+    <td><%= item.tax %></td>
+    <td><%= item.prod1Quant %></td>
+    <td><%= item.prod2Quant %></td>
+    <td><%= item.prod3Quant %></td>
+    <td><%= item.total %></td>
+    <td><%= item.taxCal %></td>
+    <td><%= item.finalTotal %></td>
+  </tr>
+  <% }) %>
+</table>
+<br />
+
+<%- include('./shared/footer.ejs') %>
